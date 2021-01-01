@@ -1,9 +1,9 @@
-This project focuses on leveraging machine learning models to predict the probability that road temperatures are subfreezing. Three different algorithms are examined: Logistic regression with elastic net penalty (LR), random forest (RF), and gradient boosted trees (GBT). XGBoost could be used to supplement GBT, but I wanted to be able to extract the individual trees for implementation using C++. 
+This example project focuses on leveraging machine learning models to predict the probability that road temperatures are subfreezing. Three different algorithms are examined: Logistic regression with elastic net penalty (LR), random forest (RF), and gradient boosted trees (GBT). XGBoost could be used to supplement GBT, but I wanted to be able to extract the individual trees for implementation using C++. Also, this notebook does not contain initial data extraction/consolidation steps. But will be briefly described below.
 
-The predictors are various model fields from the High-Resolution Rapid Refresh (HRRR) model downloaded from the University of Utah HRRR archive. These predictors include surface based fields such as temperature, relative humidity, and radiation products. Verification (targets) are provided by Road Weather Information System (RWIS) observations.
+Data was collected for 3 winter seasons (01-Oct -> 31 Mar; 2016-17, 2017-18, 2018-19). The predictors are various model fields from the High-Resolution Rapid Refresh (HRRR) model downloaded from the University of Utah HRRR archive. These predictors include surface based fields such as temperature, relative humidity, and radiation products. Hourly road temperature observations are provided by Road Weather Information System (RWIS) sites. These data are used for creating the categorical target variable. HRRR fields were extracted at the grid box where the RWIS site would be located. QC of RWIS observations was done to make sure non-plausable examples were removed.  
 
 The directory structure for this project is as such:
  - notebooks: Jupyter notebooks consisting of some sample exploratory data analysis from the dataset along with model verification using standard evaluation metrics.
  - scripts: Python scripts that run through all amjor steps (i.e.,hyperparameter tuning, training, final evaluation) for each of the three models.
  - data: Directory where data is stored/written to.
- - models: The final trained models
+ 

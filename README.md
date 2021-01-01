@@ -5,5 +5,4 @@ Data was collected for 3 winter seasons (01-Oct -> 31 Mar; 2016-17, 2017-18, 201
 The directory structure for this project is as such:
  - notebooks: Jupyter notebooks consisting of some sample exploratory data analysis from the dataset along with model verification using standard evaluation metrics.
  - scripts: Python scripts that run through all amjor steps (i.e.,hyperparameter tuning, training, final evaluation) for each of the three models.
- - data: Directory where data is stored/written to.
- 
+ - ml_lib: custom library with classes/functions I've used for this project. 
